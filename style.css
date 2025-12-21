@@ -629,6 +629,8 @@ footer{
     }
 
     .mobile-menu-container{
+        width: 100%;
+        max-width: 768px;
         top: -220px;
         z-index: -1;
         position: fixed;
@@ -703,6 +705,115 @@ footer{
         color: white;
         padding: 10px;
     }
+}
 
+@media(max-width: 450px){
+    .wrapper{
+        width: 100%;
+        max-width: 450px;
+    }
+
+    .header-links li a{
+        font-size: 5px;
+    }
+
+    .header-links .link-logo{
+        height: auto;
+        width: 20px;
+    }
+
+    header .mobile-nav{
+       width: 100%;
+       max-width:450px ;
+       height: 100px;
+       z-index: 200;
+       background-color: white;
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
+       padding: 10px 30px; 
+       transition:all 0.3s ease;
+    }
+
+    .mobile-nav .logo{
+        height: 40px;
+        width: auto;
+        align-items: center;
+    }
+
+    .mobile-nav .menu-icon{
+        scale: 65%;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .mobile-menu-container .cross-icon{
+        scale: 3%;
+        position: fixed;
+        top: -307px;
+        left: -88px;
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .mobile-menu-container.stickyMobileContainer .cross-icon{
+        scale: 3%;
+        position: fixed;
+        z-index: 100;
+        top: -367px;
+        left: -88px;
+        opacity: 1;
+        pointer-events: none;
+    }
+
+    .hero-section .left h1{
+        font-size: 45px;
+    }
+
+    footer {
+        padding: 20px 0;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    footer .wrapper {
+        padding: 0;
+    }
+
+    .footer .footer-links {
+        display: grid;
+        justify-content: start; 
+        justify-items: start;
+        align-items: center;
+        gap: 15px;
+        padding: 10px 20px; 
+    }
+
+    .footer .footer-links .links li img {
+        width: 20px; 
+        height: auto;
+        object-fit: contain;
+    }
+
+    .footer .footer-links .links li a {
+        font-size: 12px; 
+        text-align: left;
+        width: auto;
+    }
+
+    .footer .logo-footer {
+        display: block;
+        width: 350px;
+        height: auto;
+        margin-left: -45px;   
+        
+        margin-right: auto;
+        margin-top: 20px;  
+    }
+    
+    .footer .logo-footer img {
+        width: 100%;
+        display: block;
+    }
 
 }
