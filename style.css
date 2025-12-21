@@ -71,6 +71,10 @@ a{
 }
 
 /* navigation bar (menu bar) */
+.mobile-nav{
+    display: none;
+} 
+
 nav.sticky{
     z-index: 1000;
     position: fixed;
@@ -79,6 +83,10 @@ nav.sticky{
     height: 70px;
     box-shadow: 10px 0px 5px black ;
 }
+
+.mobile-menu-container{
+        display: none;
+    }
 
 nav.sticky .logo{
     height: 50px;
@@ -114,6 +122,12 @@ nav li{
     padding: 5px;  
 }
 
+.active-nav{
+    color: var(--dark-blue-color);
+    text-decoration: underline solid var(--dark-blue-color) 2px;
+    text-underline-offset: 5px;
+}
+
 nav li a{
     color: black;
     font-family: "Sen",sans-serif;
@@ -126,6 +140,7 @@ nav li a:hover{
     text-decoration: underline solid var(--dark-blue-color) 2px;
     text-underline-offset: 5px;
 }
+
 
 
 /* gambar pada beranda */
@@ -233,7 +248,8 @@ section .hero-section{
 }
 
 .hero-section .left{
-    width: 550px;
+    width: 100%;
+    max-width: 550px;
     display: block;
     justify-content: center;
     color: #0F2C4C;
@@ -272,6 +288,7 @@ section .hero-section{
 .mitra .judul-mitra{
     display: flex;
     justify-content: center;
+    height: max-content;
 }
 
 .mitra h2{
@@ -400,11 +417,292 @@ footer{
     font-size: 11;
 }
 
-
 .copyright p{
+    font-size: 15px;
     margin: 20;
     text-align: center;
     color: white;
 }
 
+/* Pad Configuration */
+@media(max-width: 1100px) {
+    /* header*/
+    .mobile-nav{
+        display: none;
+    }
 
+    .wrapper{
+        width: 915px;
+    }
+
+    .header-links .link-logo{
+        scale: 65%;
+    }
+    .header-links li a{
+        font-size: 10px;
+    }
+
+    /* navigation */
+    nav{
+    padding: 10px 50px;
+    }
+
+    nav .logo{
+        scale: 85%;
+    }
+
+    .mobile-menu-container{
+        display: none;
+    }
+
+     /*Hero sectionn*/
+    section .hero-section{
+        gap: 40px;
+    }
+
+     .hero-section .left{
+        width: 100%;
+        max-width: 420px;
+     }
+
+     .hero-section .right{
+        width: 100%;
+        max-width: 300px;
+     }
+
+     footer{
+        padding: 15px;
+     }
+
+     .links li a{
+        width: 500px;
+        font-size: 15px;
+     }
+
+     .links li img{
+        scale: 80%;
+     }
+
+     .logo-footer{
+        scale: 75%;
+     }
+
+     .copyright p{
+        font-size: 10px;
+     }
+}
+
+@media(max-width: 800px){
+    header{
+        position: relative;
+        z-index: 100;
+    }
+
+    .header-links li a{
+        font-size: 8px;
+    }
+    
+    /* navigation menu */
+    nav{
+        display: none;
+    }
+
+    main .mobile-menu-container{
+        display: block;
+    }
+
+    .mobile-nav.stickyMobile{
+        z-index: 100;
+        position: fixed;
+        background-color: #fff;
+        top: 0;
+        height: 70px;
+        box-shadow: 10px 0px 5px black ;
+    }
+
+    .mobile-nav{
+       width: 100%;
+       max-width:768px ;
+        height: 100px;
+        z-index: 200;
+        background-color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 60px 10px 30px; 
+        transition:all 0.3s ease;
+    }
+
+    .mobile-nav.stickyMobile .menu-icon{
+        scale: 60%;
+        transition:all 0.3s ease;
+    }
+
+    .mobile-nav .menu-icon.erase{
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .mobile-menu-container .active-nav{
+    color: var(--orange-color);
+    text-decoration: underline solid var(--orange-color) 2px;
+    text-underline-offset: 5px;
+    }
+
+    .mobile-nav .logo{
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        transition:all 0.3s ease;
+    }
+
+    .logo img{
+        height: 100%;
+        transition:all 0.3s ease;
+    }
+
+    .menu-icon{
+        scale: 80%;
+        margin: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition:all 0.3s ease;
+    }
+
+    .wrapper{
+        width: 100%;
+        max-width: 768px;
+        padding: 50px;
+    }
+
+    section .hero-section{
+        display: block;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        max-width: 768px;
+        gap: 50px;
+    }
+    .hero-section .left{
+        width:100%;
+        max-width: 768px;
+        text-align: center;
+    }
+    .hero-section .right{
+        margin-top: 100px;
+        width:100%;
+        max-width: 768px;
+        text-align: center;
+    }
+    .mitra{
+        width: 100%;
+        max-width: 768px;
+    }
+
+    footer{
+        padding: 10px;
+        width: 100%;
+        max-width: 768px;
+    }
+
+    footer .wrapper{
+        padding: 0;
+    }
+
+    .links li img{
+        scale: 75%;
+    }
+
+    .footer .footer-links{
+        padding: 10px 30px;
+    }
+
+    .links li a{
+        width: 270px;
+        font-size:13px;
+    }
+
+    .logo-footer{
+        scale: 70%;
+    }
+
+    .mobile-menu-container{
+        top: -220px;
+        z-index: -1;
+        position: fixed;
+        height: max-content;
+    }
+
+    .mobile-menu-container.active{
+        top: 140px;
+        z-index: 100;
+        transition: all 400ms ease;
+    }
+
+    .mobile-menu-container.active .cross-icon{
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .mobile-menu-container.stickyMobileContainer{
+        z-index: -1;
+        position: fixed;
+        background-color: #fff;
+        top: -295px;
+        height: 70px;
+        box-shadow: 10px 0px 5px black ;
+    }
+
+    .mobile-menu-container .cross-icon{
+        scale: 5%;
+        position: fixed;
+        top: -307px;
+        left: 33.5%;
+        opacity: 0;
+        pointer-events: none;
+        transition: all 400ms ease;
+    }
+
+    .mobile-menu-container.stickyMobileContainer.active{
+        top: 70px;
+        z-index: 100;
+    }
+
+    .mobile-menu-container.stickyMobileContainer.active .cross-icon{
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+    .mobile-menu-container.stickyMobileContainer .cross-icon{
+        scale: 3%;
+        position: fixed;
+        z-index: 100;
+        top: -367px;
+        left: 33.7%;
+        opacity: 1;
+        pointer-events: none;
+    }
+
+    .mobile-menu-container ul{
+        position: relative;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        width: 100vw;
+    }
+
+    .mobile-menu-container li{
+        height: auto;
+        padding:20px 0;
+        background-color: #0F2C4C;
+        border-bottom: 2px solid white;
+    }
+    .mobile-menu-container li a{
+        color: white;
+        padding: 10px;
+    }
+
+
+}
