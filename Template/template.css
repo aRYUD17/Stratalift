@@ -40,12 +40,12 @@ a{
     margin: 0 auto;
 }
 
-/* header */
 .header-links{
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    background: black;
+    background: #085984;
+    background: linear-gradient(90deg,rgba(8, 89, 132, 1) 0%, rgba(1, 46, 69, 1) 100%);
     margin: 0;
     padding-right: 50px;
     height: 45px;;
@@ -463,6 +463,8 @@ footer{
     }
 
     footer {
+        background: #085984;
+        background: linear-gradient(90deg,rgba(8, 89, 132, 1) 0%, rgba(1, 46, 69, 1) 100%);
         padding: 20px 0;
         width: 100%;
         max-width: 100%;
