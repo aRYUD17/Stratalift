@@ -159,6 +159,7 @@ nav li a:hover{
     height: calc(100vh - 141px);
     overflow: hidden;
     width: max-content;
+    transition: all 400ms ease-in-out;
 }
 
 .hero-picture img{
@@ -222,6 +223,53 @@ nav li a:hover{
     width: 30px;
     color: var(--dark-blue-color);
     background-color: var(--dark-blue-color);
+}
+
+/* text pada gambar */
+.gambar-container{
+    position: relative;
+}
+
+.gambar-container .text-gambar-container.khusus1{
+    top: 25%;
+}
+
+.gambar-container .text-gambar-container.khusus2{
+    top: 35%;
+}
+
+.gambar-container .text-gambar-container{
+    left: 15%;
+    position: absolute;
+    top: 30%;
+    width: 450px;
+    display: grid;
+}
+
+.gambar-container h2{
+    color: #fff;
+    line-height: 100%;
+    font-size: 75px;
+    margin: 30px 0;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.5)
+}
+
+.gambar-container a{
+    color: #fff;
+    font-size: 20px;
+    margin-left: 5px;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+    width: max-content;
+}
+
+.gambar-container a:hover{
+    color: #CF862A;
+    scale: 120%;
+    transition: all 400ms ease;
+    text-decoration: underline;
+    text-decoration-color: #CF862A;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 5px;
 }
 
 /* hero description */

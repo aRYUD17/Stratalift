@@ -1,32 +1,37 @@
 // animasi navigasi menu
 const nav = document.querySelector('nav');
 const links = document.querySelector('.header-links');
-const navOffsettop =  nav.offsetTop;
 const navMobile = document.querySelector('.mobile-nav');
-const mobilenCon = document.querySelector('.mobile-menu-container')
+const mobilenCon = document.querySelector('.mobile-menu-container');
+const body = document.body;
+const navOffsettop = nav.offsetTop;
 
-const body = document.body
+let isSticky = false;
 
 window.addEventListener('scroll', () => {
-    if(window.pageYOffset > navOffsettop){
+    const shouldBeSticky = window.pageYOffset > navOffsettop;
+
+    if (shouldBeSticky && !isSticky) {
         nav.classList.add('sticky');
         navMobile.classList.add('stickyMobile');
         mobilenCon.classList.add('stickyMobileContainer');
         body.style.marginTop = "100px";
         links.style.opacity = '0';
-    }
-    else{
+        isSticky = true;
+    } 
+    else if (!shouldBeSticky && isSticky) {
         nav.classList.remove('sticky');
         navMobile.classList.remove('stickyMobile');
         mobilenCon.classList.remove('stickyMobileContainer');
         body.style.marginTop = "0";
         links.style.opacity = '100';
+        isSticky = false;
     }
-})
+});
 
-// slice gambar
+// slide gambar
 let list = document.querySelector('.picture-beranda .hero-picture');
-let items = document.querySelectorAll('.picture-beranda .hero-picture .gambar');
+let items = document.querySelectorAll('.picture-beranda .hero-picture .gambar-container');
 let dots = document.querySelectorAll('.picture-beranda .dots li');
 let prev = document.querySelector('#prev');
 let next = document.querySelector('#next');
@@ -34,42 +39,42 @@ let next = document.querySelector('#next');
 let active = 0;
 let lengthItem = items.length - 1;
 
+let refreshSlider = setInterval(() => { next.click() }, 5000);
 
-next.onclick = function(){
-    if(active + 1 > lengthItem){
-        active = 0;
-    }
-    else{
-        active = active + 1;
-    }
-    reloadSlider()
+function reloadSlider() {
+    let checkLeft = items[active].offsetLeft;
+    list.style.transform = `translateX(-${checkLeft}px)`;
+
+    document.querySelector('.picture-beranda .dots li.aktif')?.classList.remove('aktif');
+    dots[active].classList.add('aktif');
+
+    document.querySelector('.gambar-container.aktif')?.classList.remove('aktif');
+    items[active].classList.add('aktif');
+    
+    clearInterval(refreshSlider);
+    refreshSlider = setInterval(() => { next.click() }, 5000);
 }
 
-prev.onclick = function(){
-    if(active - 1 < 0){
-        active = lengthItem;
-    } else {
-        active = active - 1;
-    }
+next.onclick = function() {
+    active = (active + 1 > lengthItem) ? 0 : active + 1;
     reloadSlider();
 }
 
-let refreshSlider = setInterval(() => {next.click()}, 5000);
-
-function reloadSlider(){
-    let checkLeft = items[active].offsetLeft;
-    list.style.left = -checkLeft + 'px';
-    let lastActiveDot = document.querySelector('.picture-beranda .dots li.aktif');
-    lastActiveDot.classList.remove('aktif');
-    dots[active].classList.add('aktif');
+prev.onclick = function() {
+    active = (active - 1 < 0) ? lengthItem : active - 1;
+    reloadSlider();
 }
 
 dots.forEach((li, key) => {
-    li.addEventListener('click', function(){
+    li.addEventListener('click', () => {
         active = key;
         reloadSlider();
     })
-})
+});
+
+window.addEventListener('resize', () => {
+    reloadSlider();
+});
 
 // slide mitra
 let listMitra = document.querySelector('.mitra-slider .mitra-logo');
