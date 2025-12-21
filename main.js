@@ -164,7 +164,7 @@ closeIcon.addEventListener('click', () => {
 // scroll animation
 // scroll down animation
 const observerOptions = {
-    threshold: 0.6
+    threshold: 0.4
 };
 
 const observer = new IntersectionObserver((entries) => {
