@@ -880,6 +880,7 @@ footer{
 
     .core-value{
         padding-bottom: 5px;
+        justify-items: center;
     }
 
     .core-value .wrapper{
