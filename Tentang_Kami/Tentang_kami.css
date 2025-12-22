@@ -538,12 +538,22 @@ footer{
     .servicebox{
         width: 450px;
         height: auto;
+        transition: all 2s ease-in-out;
+    }
+
+    .servicebox.core-aktif{
+        background-color: #fff;
+        scale: 100%;
+        transition: all 500ms ease-in-out;
     }
 
     .core-image{
         width: 100%;
+        max-width: 430px;
         height: 245px;
     }
+
+   
 }
 
 @media(max-width: 800px){

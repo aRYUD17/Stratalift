@@ -61,21 +61,49 @@ elemenAnimasi.forEach((el) => observer.observe(el));
 
 // Hover untuk core-service
 const coreService = document.querySelectorAll('.servicebox');
+const isMobile = window.matchMedia("(max-width: 1100px)").matches;
 
-coreService.forEach((kotakCore) => {
-
-    kotakCore.addEventListener('mouseenter', () => {
-    kotakCore.classList.add('core-aktif');
+if(isMobile){
+    coreService.forEach((kotakCore) => {
+        kotakCore.classList.remove('core-aktif');
     })
+}
+else{
+    coreService.forEach((kotakCore) => {
 
-    kotakCore.addEventListener('mouseleave', () => {
-    kotakCore.classList.remove('core-aktif');
+        kotakCore.addEventListener('mouseenter', () => {
+        kotakCore.classList.add('core-aktif');
+        })
+
+        kotakCore.addEventListener('mouseleave', () => {
+        kotakCore.classList.remove('core-aktif');
+        })
     })
-})
+}
 
 //Hover untuk core value
 const coreValue = document.querySelectorAll('.kotak');
-coreValue.forEach((kotakValue) => {
+
+if(isMobile){
+    const observerOptions = {
+        threshold: 0.5,
+        rootMargin: "-500px 0px -700px 0px"
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting){
+                entry.target.classList.add('core-value-aktif');
+            } else {
+                entry.target.classList.remove('core-value-aktif')
+            }
+        });
+    }, observerOptions);
+
+    coreValue.forEach((kotakValue) => observer.observe(kotakValue));
+}
+else{
+    coreValue.forEach((kotakValue) => {
     kotakValue.addEventListener('mouseenter', () =>{
         kotakValue.classList.add('core-value-aktif');
     })
@@ -84,3 +112,6 @@ coreValue.forEach((kotakValue) => {
         kotakValue.classList.remove('core-value-aktif')
     })
 })
+}
+
+
