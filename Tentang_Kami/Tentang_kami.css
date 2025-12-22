@@ -851,6 +851,60 @@ footer{
         pointer-events: none;
     }
 
+    /* body */
+    .container-kepala-menu h1{
+        font-size: 30px;
+        left: 10;
+    }
+
+    .core-value{
+        padding-bottom: 5px;
+    }
+
+    .core-value .wrapper{
+        display: grid;
+        justify-items: center;
+        width: 100%;
+        max-width: max-content;
+        margin: 0;
+    }
+
+    .core-value .core-value-text{
+        width: 100%;
+        max-width: 314px;
+    }
+
+    .core-value-text h2{
+        font-size: 25px;
+        text-align: center;
+    } 
+
+    .core-value-text p{
+        font-size: 12px;
+        text-align: center;
+    }
+
+    .core-value-gambar{
+        max-width: 314px;
+    }
+    /* Akhir dari core value */
+
+    .kotak h1{
+        font-size: 55px;
+    }
+
+    .kotak h3{
+        font-size: 15px;
+    }
+
+    .kotak p{
+        font-size: 10px;
+    }
+    /* akhir dari karu kore value */
+
+    .core-services .core-service-box{
+        grid-template-columns: 1fr;
+    }
     footer {
         padding: 20px 0;
         width: 100%;
