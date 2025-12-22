@@ -209,7 +209,7 @@ nav li a:hover{
 .visi-misi{
     margin: 20px 0;
     text-align: center;
-    height: 280px;
+    height: max-content;
     border-bottom: 3px solid #0F2C4C;
 }
 
@@ -275,16 +275,24 @@ nav li a:hover{
 }
 
 .core-value .core-value-gambar{
+    position: relative;
     height: 300px;
     width: 500px;
     overflow: hidden;
     border-radius: 5px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.core-value-gambar img{
+    position: absolute;
+    object-fit: cover;
 }
 
 .core-value ,.core-value-gambar img{
     filter: brightness(85%);
 }
+
 
 /* akhir dari deskripsi core value */
 
@@ -541,12 +549,6 @@ footer{
         transition: all 2s ease-in-out;
     }
 
-    .servicebox.core-aktif{
-        background-color: #fff;
-        scale: 100%;
-        transition: all 500ms ease-in-out;
-    }
-
     .core-image{
         width: 100%;
         max-width: 430px;
@@ -634,6 +636,49 @@ footer{
         align-items: center;
         transition:all 0.3s ease;
     }
+
+    /* Gambar awal */
+    .container-kepala-menu img{
+        top: 0;
+        left: 0;
+    }
+
+    /* Core Value */
+    .core-value{
+        padding: 50px;
+        height: max-content;
+    }
+
+    .core-value .wrapper{
+        gap: 20px;
+    }
+
+    .core-value-text h2{
+        font-size: 40px;
+    }
+
+    .core-value-text p{
+        font-size: 14;
+        max-width: 300px;
+    }
+
+    .core-value-gambar img{
+        top: 0;
+        left: -25%;
+    }
+
+    /* service box */
+    .servicebox{
+        width: 100%;
+        max-width: 325px;
+    }
+
+    .core-image{
+        width: 100%;
+        max-width: 300px;
+        height: 245px;
+    }
+
 
     .wrapper{
         width: 100%;
