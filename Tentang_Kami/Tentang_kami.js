@@ -58,3 +58,29 @@ const observer = new IntersectionObserver((entries) => {
 
 const elemenAnimasi = document.querySelectorAll('.scroll-anim');
 elemenAnimasi.forEach((el) => observer.observe(el));
+
+// Hover untuk core-service
+const coreService = document.querySelectorAll('.servicebox');
+
+coreService.forEach((kotakCore) => {
+
+    kotakCore.addEventListener('mouseenter', () => {
+    kotakCore.classList.add('core-aktif');
+    })
+
+    kotakCore.addEventListener('mouseleave', () => {
+    kotakCore.classList.remove('core-aktif');
+    })
+})
+
+//Hover untuk core value
+const coreValue = document.querySelectorAll('.kotak');
+coreValue.forEach((kotakValue) => {
+    kotakValue.addEventListener('mouseenter', () =>{
+        kotakValue.classList.add('core-value-aktif');
+    })
+
+    kotakValue.addEventListener('mouseleave', () => {
+        kotakValue.classList.remove('core-value-aktif')
+    })
+})

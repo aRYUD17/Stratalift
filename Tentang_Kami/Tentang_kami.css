@@ -189,9 +189,10 @@ nav li a:hover{
 
 .container-kepala-menu img{
     position: absolute;
-    top: -50%;
+    top: -120%;
     object-fit: cover;
     width: 100%;
+    filter: brightness(75%);
 }
 
 .container-kepala-menu h1{
@@ -281,6 +282,10 @@ nav li a:hover{
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
 }
 
+.core-value ,.core-value-gambar img{
+    filter: brightness(85%);
+}
+
 /* akhir dari deskripsi core value */
 
 .core-pocket{
@@ -356,6 +361,11 @@ nav li a:hover{
     border: 2px solid #844208;
     color: #fff;
 }
+
+.kotak.core-value-aktif{
+    scale: 110%;
+    transition: all 0.8s ease-in-out;
+}
 /* akhir dari core value pocket */
 
 .core-services{
@@ -388,20 +398,31 @@ nav li a:hover{
 
 .servicebox{
     display: grid;
-    justify-content: center;
-    align-items: center;
+    justify-items: center;
     border:2px solid #0F2C4C;
     background-color: #0F2C4C;
     border-radius: 5px;
+    width: 100%;
+    max-width: 500px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.servicebox.core-aktif{
+    background-color: #fff;
+    scale: 110%;
+    transition: all 500ms ease-in-out;
+}
+
+.servicebox.core-aktif a{
+    color: #0F2C4C;
 }
 
 .core-image{
     position: relative;
-    padding: 10px;
-    width: 500px;
-    height: 300px;
-    overflow: hidden;
+    margin: 10px;
+    width: 100%;
+    max-width: 450px;
+    height: 310px;
 }
 
 .core-image h3{
@@ -419,6 +440,7 @@ nav li a:hover{
     height: 100%;
     filter: brightness(55%);
     border-radius: 5px;
+    object-fit: cover;
 }
 
 .servicebox a{
@@ -433,6 +455,7 @@ nav li a:hover{
     text-decoration-line: 2px;
     text-underline-offset: 6px;
 }
+
 
 /* footer */
 footer{
@@ -503,6 +526,23 @@ footer{
 
     .mobile-menu-container{
         display: none;
+    }
+
+    .core-services .core-service-box{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    gap: 20px;
+    }
+
+    .servicebox{
+        width: 450px;
+        height: auto;
+    }
+
+    .core-image{
+        width: 100%;
+        height: 245px;
     }
 }
 
