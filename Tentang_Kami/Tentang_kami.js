@@ -63,6 +63,7 @@ elemenAnimasi.forEach((el) => observer.observe(el));
 const coreService = document.querySelectorAll('.servicebox');
 const isMobilePad = window.matchMedia("(max-width: 1100px)").matches;
 const isMobilePadMini = window.matchMedia("(max-width: 800px)").matches;
+const isPhone = window.matchMedia("(max-width: 450px)").matches;
 
 if(isMobilePad){
     coreService.forEach((kotakCore) => {
@@ -85,7 +86,26 @@ else{
 //Hover untuk core value
 const coreValue = document.querySelectorAll('.kotak');
 
-if(isMobilePadMini){
+if(isPhone){
+    const observerOptions = {
+        threshold: 0.5,
+        rootMargin: "-370px 0px -400px 0px"
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting){
+                entry.target.classList.add('core-value-aktif');
+            } else {
+                entry.target.classList.remove('core-value-aktif')
+            }
+        });
+    }, observerOptions);
+
+    coreValue.forEach((kotakValue) => observer.observe(kotakValue));
+}
+
+else if(isMobilePadMini){
     const observerOptions = {
         threshold: 0.5,
         rootMargin: "-400px 0px -500px 0px"
