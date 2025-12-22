@@ -258,18 +258,11 @@ nav li a:hover{
     position: relative;
 }
 
-.gambar-container .text-gambar-container.khusus1{
-    top: 25%;
-}
-
-.gambar-container .text-gambar-container.khusus2{
-    top: 35%;
-}
 
 .gambar-container .text-gambar-container{
     left: 15%;
     position: absolute;
-    top: 30%;
+    bottom: 30%;
     width: 450px;
     display: grid;
 }
@@ -842,6 +835,19 @@ footer{
         left: -88px;
         opacity: 1;
         pointer-events: none;
+    }
+
+    .gambar-container .text-gambar-container{
+        bottom: 20%;
+    }
+
+    .gambar-container h2{
+        font-size: 50px ;
+        width: 300px;
+    }
+
+    .gambar-container a{
+        font-size: 16px;
     }
 
     .hero-section .left h1{
