@@ -628,14 +628,62 @@ footer{
         transition:all 0.3s ease;
     }
 
-    .menu-icon{
-        scale: 80%;
-        margin: 10px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        transition:all 0.3s ease;
+    /* mulai icon burger */
+    .switcher{
+        display: none;
     }
+
+    .menu-icon{
+        position: relative;
+        width: 40px;
+        height: 25px;
+        cursor: pointer;
+        left: 0;
+    }
+
+    .hamburger-line{
+        position: absolute;
+        width: 30px;
+        height: 5px;
+        background-color: var(--dark-blue-color);
+        top: 0;
+        transition: 0.25 all ease-in-out;
+    }
+
+    .hamburger-line:nth-child(2){
+        top: 0;
+        transition: 0.5s all ease-in-out;
+    }
+
+    .hamburger-line:nth-child(3){
+        top: 50%;
+        transform: translateY(-50%);
+        transition: 0.3s all ease-in-out;
+    }
+
+    .hamburger-line:nth-child(4){
+        top: auto;
+        bottom: 0;
+        transition: 0.3s all ease-in-out;
+    }
+
+    .switcher:checked ~ .hamburger-line:nth-child(2) {
+        top: 50%;
+        transform: translateY(-50%) rotate(45deg);
+        transition: 0.5s all ease-in-out;
+    }
+
+    .switcher:checked ~ .hamburger-line:nth-child(3) {
+        opacity: 0;
+        transition: 0.3s all ease-in-out;
+    }
+
+    .switcher:checked ~ .hamburger-line:nth-child(4) {
+        bottom: 50%;
+        transform: translateY(50%) rotate(-45deg);
+        transition: 0.3s all ease-in-out;
+    }
+    /* akhir */
 
     /* Gambar awal */
     .container-kepala-menu img{
@@ -720,17 +768,13 @@ footer{
         z-index: -1;
         position: fixed;
         height: max-content;
+        transition:all 0.3s ease;
     }
 
     .mobile-menu-container.active{
         top: 140px;
         z-index: 100;
         transition: all 400ms ease;
-    }
-
-    .mobile-menu-container.active .cross-icon{
-        opacity: 1;
-        pointer-events: auto;
     }
 
     .mobile-menu-container.stickyMobileContainer{
@@ -740,36 +784,13 @@ footer{
         top: -295px;
         height: 70px;
         box-shadow: 10px 0px 5px black ;
-    }
-
-    .mobile-menu-container .cross-icon{
-        scale: 5%;
-        position: fixed;
-        top: -307px;
-        left: 33.5%;
-        opacity: 0;
-        pointer-events: none;
-        transition: all 400ms ease;
+        transition:all 0.3s ease;
     }
 
     .mobile-menu-container.stickyMobileContainer.active{
         top: 70px;
         z-index: 100;
-    }
-
-    .mobile-menu-container.stickyMobileContainer.active .cross-icon{
-            opacity: 1;
-            pointer-events: auto;
-        }
-
-    .mobile-menu-container.stickyMobileContainer .cross-icon{
-        scale: 3%;
-        position: fixed;
-        z-index: 100;
-        top: -367px;
-        left: 33.7%;
-        opacity: 1;
-        pointer-events: none;
+        transition:all 0.3s ease;
     }
 
     .mobile-menu-container ul{

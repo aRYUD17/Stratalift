@@ -144,24 +144,23 @@ function resetAutoSlide() {
 
 // mobile menu icon
 const menuIcon = document.querySelector('.menu-icon');
-const closeIcon = document.querySelector('.cross-icon');
+const switcher = document.querySelector('.switcher');
 const mobileMenuContainer = document.querySelector ('.mobile-menu-container');
 let mobileMenuContainerSticky = document.querySelector('.mobile-menu-container.stickyMobileContainer')
 
-menuIcon.addEventListener('click', () => {
-    mobileMenuContainer.classList.add('active');
-    menuIcon.classList.add('erase');
-    mobileMenuContainerSticky.classList.add('active');
+switcher.addEventListener('change', function() {
+    if (this.checked){
+        mobileMenuContainer.classList.add('active');
+        mobileMenuContainerSticky.classList.add('active');
+    }
+    else{
+        mobileMenuContainer.classList.remove('active');
+        mobileMenuContainerSticky.classList.remove('active');
+    }
 
 })
 
-closeIcon.addEventListener('click', () => {
-    mobileMenuContainer.classList.remove('active');
-    menuIcon.classList.remove('erase');
-    mobileMenuContainerSticky.classList.add('active');
-})
 
-// scroll animation
 // scroll down animation
 const observerOptions = {
     threshold: 0.4
