@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="Template/template.css">
+    <link rel="stylesheet" href="template.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sen:wght@400..800&display=swap" rel="stylesheet">
@@ -31,24 +31,33 @@
 
         <div class="nav-container">
                 <nav>
-                    <img class="logo" src="Elemen/Logo/Logo perusahaan.png" alt="" loading="lazy">
+                    <img class="logo" src="../Elemen/Logo/Logo perusahaan.png" alt="" loading="lazy">
                     <ul>
-                        <li>
+                        <li class="judul-nav">
                             <a href="#" class="active-nav">Beranda</a>
                         </li>
-                        <li>
+                        <li class="judul-nav">
                             <a href="#">Tentang Kami</a>
+                        </li class="judul-nav">
+                        <li class="drop-down">
+                            <button class="drop-down-head">
+                                <span class="judul-nav">Layanan</span>
+                                <img src="../Elemen/Icon/arrow-down-s-line.svg" alt="">
+                            </button>
+                            <ul class="sub-menu">
+                                <li><a href="#">Site Investigation</a></li>
+                                <li><a href="#">Laboratory Analysis</a></li>
+                                <li><a href="#">Engineering Calculation</a></li>
+                                <li><a href="#">Monitoring System</a></li>
+                            </ul>
                         </li>
-                        <li>
-                            <a href="#">Layanan</a>
-                        </li>
-                        <li>
+                        <li class="judul-nav">
                             <a href="#">Studi Kasus</a>
                         </li>
-                        <li>
+                        <li class="judul-nav">
                             <a href="#">Berita</a>
                         </li>
-                        <li>
+                        <li class="judul-nav">
                             <a href="#">Kontak</a>
                         </li>
                     </ul>
@@ -56,7 +65,7 @@
 
                 <nav class="mobile-nav">
                     <div class="logo">
-                        <img src="Elemen/Logo/Logo perusahaan.png" alt="" loading="lazy">
+                        <img src="../Elemen/Logo/Logo perusahaan.png" alt="" loading="lazy">
                     </div>
                     <label class="menu-icon">
                         <input class="switcher" type="checkbox">
@@ -187,6 +196,6 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
-    <script src="Template/template.js"></script>
+    <script src="template.js"></script>
 </body>
 </html>

@@ -81,7 +81,7 @@ nav.sticky{
     background-color: #fff;
     top: 0;
     height: 70px;
-    box-shadow: 10px 0px 5px black ;
+    box-shadow: 0px 0px 5px black ;
 }
 
 .mobile-menu-container{
@@ -116,6 +116,8 @@ nav ul{
     display: flex;
     justify-content: space-between;
     gap: 15px;
+    width: 100%;
+    max-width: 700px;
 }
 
 nav li{
@@ -128,18 +130,91 @@ nav li{
     text-underline-offset: 5px;
 }
 
-nav li a{
+nav a{
     color: black;
-    font-family: "Sen",sans-serif;
-    font-weight:bolder ;
-    transition: all 0.3s ease;
 }
 
-nav li a:hover{
+nav .judul-nav{
+    color: black;
+    font-weight:bolder ;
+    transition: all 0.3s ease;
+    font-size: 16px;
+}
+
+nav .judul-nav:hover, a:hover{
     color: var(--dark-blue-color);
     text-decoration: underline solid var(--dark-blue-color) 2px;
     text-underline-offset: 5px;
 }
+
+/* drop down menu */
+.drop-down-head{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    background-color: var(--white-color);
+    border-width: 0;
+    padding: 2.5px;
+}
+
+.drop-down .drop-down-head img{
+    transition: all 0.3s ease-in-out;
+}
+
+.drop-down{
+    position: relative;
+    width: 100%;
+    max-width: max-content;
+    padding: 0;
+    height: 26px;
+}
+
+.drop-down .sub-menu{
+    width: max-content;
+    padding: 0 15px;
+    background-color: #085984;
+    position: absolute;
+    display: grid;
+    gap: 15px;
+    top: 200%;
+    border-radius: 5px;
+    transition: max-height .4s ease-out;
+    max-height: 0;
+}
+
+.drop-down .sub-menu li{
+    margin: 5px 0;
+    padding: 5px 0;
+}
+
+.drop-down .sub-menu a{
+    font-size: 13px;
+    margin: 10px 0;
+    color: #fff;
+}
+
+.drop-down:hover .sub-menu{
+    max-height: 1000px;
+    transition: all 0.6s ease-in-out;
+    max-height: 1000px;
+}
+
+.drop-down:hover .drop-down-head img{
+    transform: rotate(180deg);
+    transition: all 0.3s ease-in-out;
+} 
+
+.drop-down .sub-menu a:hover{
+    font-size: 13px;
+    color: #fff;
+    text-decoration: underline;
+    text-decoration-color: #CF862A;
+    text-decoration-thickness: 3px;
+}
+
+
+
+
 
 /* footer */
 footer{
@@ -382,12 +457,14 @@ footer{
         position: fixed;
         height: max-content;
         transition:all 0.3s ease;
+        opacity: 0;
     }
 
     .mobile-menu-container.active{
         top: 140px;
         z-index: 100;
         transition: all 400ms ease;
+        opacity: 1;
     }
 
     .mobile-menu-container.stickyMobileContainer{
@@ -398,12 +475,14 @@ footer{
         height: 70px;
         box-shadow: 10px 0px 5px black ;
         transition:all 0.3s ease;
+        opacity: 0;
     }
 
     .mobile-menu-container.stickyMobileContainer.active{
         top: 70px;
         z-index: 100;
         transition:all 0.3s ease;
+        opacity: 1;
     }
 
     .mobile-menu-container ul{
@@ -433,7 +512,7 @@ footer{
         max-width: 450px;
     }
 
-        .header-links li a{
+    .header-links li a{
         font-size: 5px;
         width: 100%;
         max-width: 120px;
