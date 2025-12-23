@@ -820,13 +820,27 @@ footer{
         max-width: 450px;
     }
 
-    .header-links li a{
+        .header-links li a{
         font-size: 5px;
+        width: 100%;
+        max-width: 120px;
     }
 
     .header-links .link-logo{
         height: auto;
         width: 20px;
+    }
+
+    .header-links{
+        width: 100%;
+        max-width: 100vw;
+        padding: 0;
+        margin: 0;
+        justify-content: space-around;
+    }
+
+    .header-links ul{
+        padding: 15px;
     }
 
     header .mobile-nav{
