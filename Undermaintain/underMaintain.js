@@ -41,4 +41,21 @@ switcher.addEventListener('change', function() {
 
 })
 
+// scroll down animation
+const observerOptions = {
+    threshold: 0.4
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('aktif');
+            observer.unobserve(entry.target); 
+        } 
+    });
+}, observerOptions);
+
+const elemenAnimasi = document.querySelectorAll('.scroll-anim');
+elemenAnimasi.forEach((el) => observer.observe(el));
+
 
