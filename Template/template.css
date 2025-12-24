@@ -40,27 +40,6 @@ a{
     margin: 0 auto;
 }
 
-.scroll-anim {
-    opacity: 0;
-    transform: translateY(-30px);
-    transition: all 1s ease-out;
-    filter: blur(5px);
-}
-
-.scroll-anim.aktif {
-    opacity: 1;
-    transform: translateY(0);
-    filter: blur(0);
-}
-
-@keyframes munculPelan {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
 
 /* Header */
 .header-links{
@@ -139,6 +118,8 @@ nav ul{
     display: flex;
     justify-content: space-between;
     gap: 15px;
+    width: 100%;
+    max-width: 700px;
 }
 
 nav li{
@@ -151,14 +132,30 @@ nav li{
     text-underline-offset: 5px;
 }
 
-nav li a{
+nav a{
     color: black;
-    font-family: "Sen",sans-serif;
-    font-weight:bolder ;
-    transition: all 0.3s ease;
 }
 
-nav li a:hover{
+nav .judul-nav{
+    color: black;
+    font-weight:bolder ;
+    transition: all 0.3s ease;
+    font-size: 16px;
+}
+
+nav .judul-nav:hover, a:hover{
+    color: var(--dark-blue-color);
+    text-decoration: underline solid var(--dark-blue-color) 2px;
+    text-underline-offset: 5px;
+}
+
+nav .drop-down-head .judul-nav{
+    color: black;
+    text-decoration: 0
+}
+
+
+nav .drop-down-head .judul-nav.judulAktif{
     color: var(--dark-blue-color);
     text-decoration: underline solid var(--dark-blue-color) 2px;
     text-underline-offset: 5px;
