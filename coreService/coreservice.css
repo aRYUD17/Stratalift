@@ -334,7 +334,7 @@ footer{
     transition: all 0.5s ease-in-out;
 }
 
-button span{
+.Tombolbalik button span{
     margin-right: 15px;
     font-weight: 750;
     color: var(--white-color);
@@ -342,23 +342,23 @@ button span{
     
 }
 
-button svg{
+.Tombolbalik button svg{
     transform: rotate(90deg);
     margin-left: 5px;
 }
 
-button:hover {
+.Tombolbalik button:hover {
     background-color: white;
     scale: 105%;
     transition: all 0.5s ease-in-out;
     gap: 20px;
 }
 
-button:hover span{
+.Tombolbalik button:hover span{
     color: var(--light-blue-color);
 }
 
-button:hover svg path{
+.Tombolbalik button:hover svg path{
     scale: 102%;
     fill: var(--light-blue-color);
 }
