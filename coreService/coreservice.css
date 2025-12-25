@@ -19,11 +19,19 @@ body{
 }
 
 .wrapper{
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.wrapperisi{
     display: flex;
+    padding: 0 70px;
+    margin: auto;
     max-width: 100vw;
     margin: 100px 30px;
     gap: 50px;
     align-items: flex-start;
+    justify-content: space-between;
 }
 
 ul{
@@ -162,6 +170,7 @@ nav .drop-down-head .judul-nav.judulAktif{
     background-color: var(--white-color);
     border-width: 0;
     padding: 2.5px;
+    margin-bottom: 5px;
 }
 
 .drop-down .drop-down-head img{
@@ -221,11 +230,10 @@ nav .drop-down-head .judul-nav.judulAktif{
     transition: 0.6s ease-in-out;
 }
 
-
 /* footer */
 footer{
     padding: 80px 0;
-    background-color: #0F2C4C;
+    background: linear-gradient(90deg,rgba(8, 89, 132, 1) 0%, rgba(1, 46, 69, 1) 100%);
 }
 
 .footer .footer-links{
@@ -261,12 +269,16 @@ footer{
     color: white;
 }
 
+
+
 .Slide-Gambar{
     width: 100%;
     max-width: 650px;
     max-height: 450px;
     height: 100%;
     overflow: hidden;
+    box-shadow: 0 5px 10px grey;
+    border-radius: 5px;
 }
 
 .deskripsi{
@@ -307,25 +319,48 @@ footer{
     border-bottom: 2px solid var(--orange-color);
 }
 
-button{
+.Tombolbalik button{
     padding: 0;
     margin-top: 45px;
     display: flex;
     align-items: center;
-    gap: 15px;
+    justify-content: flex-end;
+    gap: 5px;
+    width: 230px;
     height: 40px;
     background-color: var(--dark-blue-color);
     border-radius: 5px;
     border: 3px solid var(--light-blue-color);
+    transition: all 0.5s ease-in-out;
 }
 
 button span{
     margin-right: 15px;
+    font-weight: 750;
     color: var(--white-color);
+    font-family: "Sen",sans-serif;
+    
 }
 
-button img{
+button svg{
     transform: rotate(90deg);
+    margin-left: 5px;
+}
+
+button:hover {
+    background-color: white;
+    scale: 105%;
+    transition: all 0.5s ease-in-out;
+    gap: 20px;
+}
+
+button:hover span{
+    color: var(--light-blue-color);
+}
+
+button:hover svg path{
+    scale: 102%;
+    fill: var(--light-blue-color);
 }
 
 /* Pad Configuration */
@@ -626,8 +661,14 @@ button img{
         max-height: 500px;
         transition: .4s all ease-in-out;
     }
+
+    /*isi */
+    .wrapperisi{
+        display: grid;
+        justify-items: center;
+    }
+
 }
-/* update untuk container */
 
 @media(max-width: 450px){
     .wrapper{
@@ -731,4 +772,23 @@ button img{
         display: block;
     }
 
+    .wrapperisi{
+        margin: 30px;
+    }
+
+    .Slide-Gambar{
+        height: 200px;
+    }
+
+    .deskripsi{
+        margin: 0;
+    }
+
+    .desc-atas h1{
+        font-size: 35px;
+    }
+
+    .desc-atas p, .desc-bawah li{
+        font-size: 12px;
+    }
 }
